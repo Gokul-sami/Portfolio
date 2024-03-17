@@ -64,10 +64,13 @@ body{
   width: 500px;
   height: 200px;
 }
-
+/*4*/
 .cont{
   color: #0a77a2;
   font-weight: bolder;
+}
+.btn:hover{
+  background-color: #0a77a2;
 }
 /*5*/
 .container3{
