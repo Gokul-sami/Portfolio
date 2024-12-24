@@ -96,7 +96,7 @@ h3 {
 
 .marquee-content {
     display: flex;
-    animation: scroll 18s linear infinite; 
+    animation: scroll 20s linear infinite; 
     gap: 20px; 
 }
 
