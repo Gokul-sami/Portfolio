@@ -6,6 +6,10 @@ function menuHighlight2(){
     document.getElementById("projects").style.color = 'white';
 }
 
+function menuHighlight3(){
+    document.getElementById("about").style.color = 'white';
+}
+
 function changeImg(){
     document.getElementById("pro_pic").src = "images/cap_pic_edit.jpg";
 }

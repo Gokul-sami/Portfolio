@@ -16,9 +16,7 @@ body {
 
 .menu div a:hover, .github:hover, .linkedin:hover{
     transform: translateY(-5px);
-    transition-property: ease-in-out;
-    transition-duration: 10ms;
-    transition-delay: 5ms;
+    transition: transform 0.3s ease-in-out;
     color: aliceblue;
 }
 
@@ -89,17 +87,35 @@ h3 {
     text-align: center;
 }
 
-marquee {
-    display: block;
-    margin-bottom: 20px;
+.marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-color: black; 
 }
 
-marquee span {
+.marquee-content {
+    display: flex;
+    animation: scroll 18s linear infinite; 
+    gap: 20px; 
+}
+
+.marquee-content span {
     display: inline-block;
-    margin: 0 20px;
-    padding: 5px 10px;
+    white-space: nowrap; 
+    padding: 5px 15px; 
     background-color: #7f8291;
     color: rgb(0, 0, 0);
     border-radius: 5px;
     font-size: 1rem;
+    text-align: center; 
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
