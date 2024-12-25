@@ -30,7 +30,9 @@ a{
     color: inherit;
 }
 
-.github {
+.github a svg, .linkedin a svg {
+    width: 1.5rem;
+    height: 1.5rem;
     flex: 0; 
 }
 
@@ -40,10 +42,6 @@ a{
     transform: translateX(-50%); 
     display: flex;
     gap: 30px; 
-}
-
-.linkedin {
-    flex: 0; 
 }
 
 h3 {
@@ -64,23 +62,27 @@ h3 {
     font-optical-sizing: auto;
     font-size: 4rem;
     text-align: center;
-    color: #fff; /* Text color */
-    text-shadow: 0 0 10px #ffffff;
-    transition: transform 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
-    animation: glow 1s infinite alternate; /* Add glowing animation */
+    color: transparent; 
+    background: linear-gradient(90deg, #ffffff, #ffffff, #000000, #000000); 
+    background-size: 200%; 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    transition: transform 0.5s ease-in-out;
+    animation: gradient-glow 3s; 
+    animation-iteration-count: 1;
 }
 
 .desc h1:hover {
-    transform: scale(1.1); /* Scale on hover */
-    text-shadow: 0 0 10px #eeeeee; /* Change lighting effect */
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
 }
 
-@keyframes glow {
+@keyframes gradient-glow {
     0% {
-        text-shadow: 0 0 10px #ffffff;
+        background-position: 200%;
     }
     100% {
-        text-shadow: 0 0 10px #000000;
+        background-position: 0%;
     }
 }
 
@@ -92,12 +94,22 @@ h3 {
     text-align: center;
 }
 
-.peek h1{
-    transition: transform 0.5s ease-in-out;
+footer{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
 }
 
-.peek h1:hover{
-    transform: scale(1.1);
+.peek svg{
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.peek svg:hover{
+    color: #ffffff;
+    width: 2rem;
+    height: 2rem;
 }
 
 .marquee {
@@ -122,6 +134,12 @@ h3 {
     border-radius: 5px;
     font-size: 1rem;
     text-align: center; 
+    transition: background-color 0.3s, font-size 0.3s;
+}
+
+.marquee-content span:hover {
+    background-color: #ffffff;
+    font-size: 1.2rem;
 }
 
 @keyframes scroll {
@@ -263,4 +281,26 @@ h3 {
 }
 .contact-btn:hover {
     background-color: #333;
+}
+.link svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+.link svg:hover{
+    color: #fff;
+}
+.details h1, p, h4, ul li {
+    transition: 0.2s ease-in-out;
+}
+.details h1:hover, p:hover, h4:hover, ul li:hover {
+    color: #fff;
+    transform: scale(1.02);
+    cursor:context-menu;
+}
+#details{
+    font-size: 1em;
+    height: 5px; 
+    color: #fff;
 }
