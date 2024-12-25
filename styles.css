@@ -15,7 +15,8 @@ body {
     padding: 10px;
     top: 0;
     z-index: 10;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(30px); 
 }
 
 .menu div a:hover, .github:hover, .linkedin:hover{
