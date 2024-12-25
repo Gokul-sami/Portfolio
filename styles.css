@@ -59,37 +59,45 @@ h3 {
     margin-top: 30px;
 }
 
-.image img{
-    border-radius: 50%;
-    width: 100%;
+.desc h1 {
+    font-family: "Bungee Shade", serif;
+    font-optical-sizing: auto;
+    font-size: 4rem;
+    text-align: center;
+    color: #fff; /* Text color */
+    text-shadow: 0 0 10px #ffffff;
+    transition: transform 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
+    animation: glow 1s infinite alternate; /* Add glowing animation */
 }
 
-.image img:hover{
-    src: url(cap_pic_edit.jpg);
+.desc h1:hover {
+    transform: scale(1.1); /* Scale on hover */
+    text-shadow: 0 0 10px #eeeeee; /* Change lighting effect */
 }
 
-.image{
-    width: 25%;
-    left: 30%;
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ffffff;
+    }
+    100% {
+        text-shadow: 0 0 10px #000000;
+    }
 }
 
-.content{
-    padding: 2%;
-    width: auto;
-    color: #7f8291;
-}
-
-.name{
-    font-size: 3.5em;
-    margin-bottom: 0px;
-}
-
-.desc{
-    margin-top: 0px;
+.desc p{
+    font-size: 1.5rem;
 }
 
 .skill{
     text-align: center;
+}
+
+.peek h1{
+    transition: transform 0.5s ease-in-out;
+}
+
+.peek h1:hover{
+    transform: scale(1.1);
 }
 
 .marquee {
@@ -219,7 +227,7 @@ h3 {
 }
 .details h1 {
     font-family: 'Sacramento', cursive;
-    font-size: 3em;
+    font-size: 4em;
     color: #333;
     margin-bottom: 10px;
 }
