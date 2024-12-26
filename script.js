@@ -1,24 +1,16 @@
 function menuHighlight1(){
-    document.getElementById("home").style.color = 'white';
+    $("#home").css('color', 'white');
 }
 
 function menuHighlight2(){
-    document.getElementById("projects").style.color = 'white';
+    $("#projects").css('color', 'white');
 }
 
 function menuHighlight3(){
-    document.getElementById("about").style.color = 'white';
-}
-
-function changeImg(){
-    document.getElementById("pro_pic").src = "images/cap_pic_edit.jpg";
-}
-
-function changeImgBack(){
-    document.getElementById("pro_pic").src = "images/cap_pic_edit_1.jpg";
+    $("#about").css('color', 'white');
 }
 
 function showDetails(message) {
-    var details = document.getElementById('details');
-    details.textContent = message; 
+    var details = $('#details');
+    details.text(message); 
 }
