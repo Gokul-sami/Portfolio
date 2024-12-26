@@ -35,6 +35,12 @@ a{
     height: 1.5rem;
     flex: 0; 
 }
+.github a svg {
+    margin-left: 15px;
+}
+.linkedin a svg {
+    margin-right: 15px;
+}
 
 .nav {
     position: absolute;
@@ -157,26 +163,31 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 20px;
 }
 .project {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 50%;
+    width: 45%;
     height: auto; 
     padding: 20px;
     box-sizing: border-box;
     border-style: solid;
-    border-color: #fff;
-    border-width: 1px;
+    border-color: #707071;
+    border-width: 5px;
     border-radius: 10px;
     margin-bottom: 30px; 
+}
+.project:hover{
+    border-color: #fff;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 
 .project-details {
     width: 100%;
-    padding: 20px;
     font-size: 1.2em;
     line-height: 1.5;
 }
@@ -193,33 +204,51 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.8;
+}
+.project:hover .project-image{
+    opacity: 1;
 }
 
 .project-image:hover {
     background-size: 55%;
-    opacity: 0.8;
-}
-.project-image:hover .btn{
-    display: block;
-}
-
-.btn{
-    display: none;
 }
 
 .project-details h2 {
     font-size: 1.5em;
     margin-bottom: 15px;
     text-align: center;
+    transition: 0.2s ease-in-out;
 }
 .project-details h2:hover {
-    color: #fff;
-    transform: scale(1.02);
+    transform: scale(1.1);
+    cursor: context-menu;
 }
 
 .project-details p {
     text-align: justify;
 }
+.project-details p:hover {
+    color: rgb(255, 255, 255);
+    cursor: context-menu;
+}
+
+.project-details div{
+    height: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.project-details div div{
+    width: auto;
+}
+.project_links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
 
 @media (min-width: 768px) {
     .projects-container {
