@@ -16,8 +16,10 @@ This portfolio is designed to highlight my work and provide an easy way for pote
 ## File Structure
 The main components of the project are structured as follows:
 - `index.html`: Main HTML file.
-- `styles/`: Directory containing CSS files.
-- `scripts/`: Directory containing JavaScript files.
+- `styles.css`: Main CSS file.
+- `script.js`: Main Javascript file.
+- `pages/`: Directory containing additional files.
+- `images/`: Directory containing image files.
 
 ## Setup Instructions
 To set up the project locally, follow these steps:
@@ -37,7 +39,7 @@ Simply open the `index.html` file in a web browser to view the portfolio.
 ## Features
 - **Responsive Design:** The layout adjusts to different screen sizes.
 - **Project Showcase:** Displays a list of projects with descriptions and links.
-- **Contact Form:** Allows visitors to send messages directly.
+- **About page:** Displays about me and allows visitors to contact me directly.
 
 ## Contributors
 - [Demon-hawwk](https://github.com/Demon-hawwk)
