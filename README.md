@@ -40,4 +40,4 @@ Simply open the `index.html` file in a web browser to view the portfolio.
 - **Contact Form:** Allows visitors to send messages directly.
 
 ## Contributors
-- [Gokul-sami](https://github.com/Gokul-sami)
+- [Demon-hawwk](https://github.com/Demon-hawwk)
