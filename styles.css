@@ -344,3 +344,19 @@ footer{
     height: 5px; 
     color: #fff;
 }
+
+#link2 svg:hover{
+    color: #31a2ff;
+}
+#link3 svg:hover{
+    color: #9865ff;
+}
+#link4 svg:hover{
+    color: #009e3d;
+}
+#link5 svg:hover {
+    color: red
+}
+#link6 svg:hover{
+    color: #03e2ff;
+}
