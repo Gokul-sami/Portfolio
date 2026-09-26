@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img">
+  <title>OptiDetect — ocular screening diagram</title>
+  <defs>
+    <linearGradient id="od-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070a0b" />
+      <stop offset="1" stop-color="#0e1416" />
+    </linearGradient>
+    <radialGradient id="od-teal" cx="0.74" cy="0.18" r="0.62">
+      <stop offset="0" stop-color="#2ee6c5" stop-opacity="0.2" />
+      <stop offset="1" stop-color="#2ee6c5" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="od-azure" cx="0.08" cy="0.94" r="0.58">
+      <stop offset="0" stop-color="#4d9cff" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#4d9cff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="od-scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ee6c5" stop-opacity="0" />
+      <stop offset="0.5" stop-color="#2ee6c5" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#2ee6c5" stop-opacity="0" />
+    </linearGradient>
+    <pattern id="od-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#od-bg)" />
+  <rect width="1600" height="1000" fill="url(#od-grid)" />
+  <rect width="1600" height="1000" fill="url(#od-teal)" />
+  <rect width="1600" height="1000" fill="url(#od-azure)" />
+
+  <rect x="240" y="214" width="1120" height="3" fill="url(#od-scan)" />
+  <rect x="240" y="784" width="1120" height="3" fill="url(#od-scan)" opacity="0.45" />
+
+  <g transform="translate(800 496)">
+    <g fill="none" stroke="#2ee6c5" stroke-linecap="round">
+      <path
+        d="M-430 0C-316 -158 -152 -224 0 -224C152 -224 316 -158 430 0C316 158 152 224 0 224C-152 224 -316 158 -430 0Z"
+        stroke-opacity="0.32"
+        stroke-width="2.5" />
+      <circle r="146" stroke-opacity="0.45" stroke-width="2" />
+      <circle r="78" stroke-opacity="0.7" stroke-width="2" />
+    </g>
+    <circle r="30" fill="#2ee6c5" fill-opacity="0.85" />
+    <rect
+      x="-206"
+      y="-206"
+      width="412"
+      height="412"
+      rx="20"
+      fill="none"
+      stroke="#2ee6c5"
+      stroke-opacity="0.5"
+      stroke-width="2"
+      stroke-dasharray="16 16" />
+    <g fill="none" stroke="#2ee6c5" stroke-width="4" stroke-linecap="round">
+      <path d="M-206 -158V-206H-158" />
+      <path d="M158 -206H206V-158" />
+      <path d="M206 158V206H158" />
+      <path d="M-158 206H-206V158" />
+    </g>
+  </g>
+
+  <g
+    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    font-size="26"
+    letter-spacing="3"
+    fill="#2ee6c5"
+    fill-opacity="0.78">
+    <text x="96" y="866">SENSITIVITY 98.67%</text>
+    <text x="96" y="906">ACCURACY 97.11%</text>
+  </g>
+  <text
+    x="1600"
+    y="120"
+    text-anchor="end"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    font-size="24"
+    letter-spacing="4"
+    fill="#ffffff"
+    fill-opacity="0.34">ERAF · EFFICIENTNETB0 · MEDIAPIPE</text>
+</svg>

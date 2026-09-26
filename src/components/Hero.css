@@ -1,0 +1,236 @@
+/* Editorial-split hero. Entrance is a one-shot staggered rise (transform +
+   opacity only); the drifting orbs live in the fixed backdrop. */
+
+.hero {
+  position: relative;
+  padding-block: clamp(7.5rem, 15vh, 10.5rem) clamp(2.5rem, 6vw, 4rem);
+}
+
+/* Hero layout: copy on the left, résumé colophon on the right. */
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: end;
+}
+
+.hero__copy {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 54rem;
+}
+
+.hero__eyebrow {
+  color: var(--ink-muted);
+}
+
+.hero__name {
+  font-size: clamp(3.1rem, 11.5vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+}
+
+.hero__name-line {
+  display: block;
+  background: linear-gradient(
+    104deg,
+    var(--ink) 0%,
+    var(--ink) 44%,
+    var(--accent) 78%,
+    var(--accent-2) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__tagline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 34rem;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+}
+
+.hero__bracket {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Headline numbers: full-width band, one cell per stat. */
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  border-top: 1px solid var(--hairline);
+}
+
+.hero__stat {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.7rem clamp(1rem, 2vw, 1.9rem) 0 0;
+}
+
+.hero__stat + .hero__stat {
+  padding-left: clamp(1rem, 2vw, 1.9rem);
+  border-left: 1px solid var(--hairline);
+}
+
+.hero__stat-value {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.hero__stat-label {
+  color: var(--ink-dim);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------------------
+   Colophon — the résumé facts that now sit where the portrait used to be.
+   ------------------------------------------------------------------------ */
+
+.hero__facts {
+  display: grid;
+  padding-left: clamp(1.25rem, 3vw, 2rem);
+  border-left: 1px solid var(--hairline);
+}
+
+.hero__fact {
+  display: grid;
+  gap: 0.22rem;
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.hero__fact:first-child {
+  padding-top: 0.2rem;
+}
+
+.hero__fact:last-child {
+  padding-bottom: 0.2rem;
+  border-bottom: 0;
+}
+
+.hero__fact-label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero__fact-value {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Foot: scroll cue + staggered entrance
+   ------------------------------------------------------------------------ */
+
+.hero__foot {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero__scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink-muted);
+  transition: color 0.4s var(--ease-out-expo);
+}
+
+.hero__scroll:hover {
+  color: var(--ink);
+}
+
+.hero__scroll svg {
+  transform: rotate(180deg);
+  animation: nudge 3.2s var(--ease-in-out-quint) infinite;
+}
+
+@keyframes nudge {
+  0%,
+  60%,
+  100% {
+    transform: rotate(180deg) translate3d(0, 0, 0);
+  }
+  30% {
+    transform: rotate(180deg) translate3d(0, 4px, 0);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero__copy > *,
+.hero__facts,
+.hero__stats,
+.hero__foot {
+  animation: rise-in 1s var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 110ms + 120ms);
+}
+
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__facts {
+    padding-left: 0;
+    padding-top: 1.25rem;
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .hero__fact:first-child {
+    padding-top: 0.9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero__stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__stat {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .hero__stat + .hero__stat {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .hero__stat:last-child {
+    border-bottom: 0;
+  }
+}

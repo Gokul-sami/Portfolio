@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img">
+  <title>StudyPlanner — study schedule diagram</title>
+  <defs>
+    <linearGradient id="sp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070a0b" />
+      <stop offset="1" stop-color="#0e1416" />
+    </linearGradient>
+    <radialGradient id="sp-teal" cx="0.8" cy="0.14" r="0.6">
+      <stop offset="0" stop-color="#2ee6c5" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#2ee6c5" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="sp-azure" cx="0.06" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#4d9cff" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#4d9cff" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="sp-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#sp-bg)" />
+  <rect width="1600" height="1000" fill="url(#sp-grid)" />
+  <rect width="1600" height="1000" fill="url(#sp-teal)" />
+  <rect width="1600" height="1000" fill="url(#sp-azure)" />
+
+  <rect
+    x="890"
+    y="264"
+    width="192"
+    height="550"
+    rx="26"
+    fill="#2ee6c5"
+    fill-opacity="0.06"
+    stroke="#2ee6c5"
+    stroke-opacity="0.18" />
+
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="2">
+    <rect x="170" y="280" width="160" height="110" rx="18" />
+    <rect x="538" y="280" width="160" height="110" rx="18" />
+    <rect x="722" y="280" width="160" height="110" rx="18" />
+    <rect x="1090" y="280" width="160" height="110" rx="18" />
+    <rect x="1274" y="280" width="160" height="110" rx="18" />
+    <rect x="170" y="416" width="160" height="110" rx="18" />
+    <rect x="354" y="416" width="160" height="110" rx="18" />
+    <rect x="538" y="416" width="160" height="110" rx="18" />
+    <rect x="722" y="416" width="160" height="110" rx="18" />
+    <rect x="1090" y="416" width="160" height="110" rx="18" />
+    <rect x="1274" y="416" width="160" height="110" rx="18" />
+    <rect x="354" y="552" width="160" height="110" rx="18" />
+    <rect x="538" y="552" width="160" height="110" rx="18" />
+    <rect x="722" y="552" width="160" height="110" rx="18" />
+    <rect x="1090" y="552" width="160" height="110" rx="18" />
+    <rect x="1274" y="552" width="160" height="110" rx="18" />
+    <rect x="170" y="688" width="160" height="110" rx="18" />
+    <rect x="354" y="688" width="160" height="110" rx="18" />
+    <rect x="538" y="688" width="160" height="110" rx="18" />
+    <rect x="722" y="688" width="160" height="110" rx="18" />
+    <rect x="906" y="688" width="160" height="110" rx="18" />
+  </g>
+
+  <g fill="#2ee6c5" fill-opacity="0.16">
+    <rect x="354" y="280" width="160" height="110" rx="18" />
+    <rect x="906" y="416" width="160" height="110" rx="18" />
+    <rect x="170" y="552" width="160" height="110" rx="18" />
+    <rect x="1090" y="688" width="160" height="110" rx="18" />
+  </g>
+
+  <g fill="none" stroke="#2ee6c5" stroke-width="3" stroke-linecap="round">
+    <rect x="354" y="280" width="160" height="110" rx="18" stroke-opacity="0.7" />
+    <rect x="906" y="416" width="160" height="110" rx="18" stroke-opacity="0.85" />
+    <rect x="170" y="552" width="160" height="110" rx="18" stroke-opacity="0.55" />
+    <rect x="1090" y="688" width="160" height="110" rx="18" stroke-opacity="0.7" />
+  </g>
+
+  <g transform="translate(1348 214)">
+    <circle r="56" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="8" />
+    <circle
+      r="56"
+      fill="none"
+      stroke="#2ee6c5"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-dasharray="238 352"
+      transform="rotate(-90)" />
+    <path d="M-20 2 -6 16 20 -14" fill="none" stroke="#2ee6c5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <text
+    x="96"
+    y="890"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    font-size="26"
+    letter-spacing="3"
+    fill="#2ee6c5"
+    fill-opacity="0.78">SCHEDULING · REMINDERS · FIREBASE SYNC</text>
+</svg>

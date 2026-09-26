@@ -1,0 +1,86 @@
+/* Capability bento: 7+5 on row one, then 4+4+4. Collapses to one column. */
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.skills__card--frameworks {
+  grid-column: 1 / span 7;
+}
+
+.skills__card--languages {
+  grid-column: 8 / span 5;
+}
+
+.skills__card--ai {
+  grid-column: 1 / span 4;
+}
+
+.skills__card--data {
+  grid-column: 5 / span 4;
+}
+
+.skills__card--tools {
+  grid-column: 9 / span 4;
+}
+
+.skills__core {
+  display: grid;
+  gap: 0.85rem;
+  height: 100%;
+  padding: clamp(1.2rem, 2.6vw, 1.75rem);
+}
+
+.skills__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.skills__index {
+  color: var(--accent);
+  letter-spacing: 0.2em;
+}
+
+.skills__title {
+  font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+}
+
+.skills__blurb {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.skills__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+@media (max-width: 1000px) {
+  .skills__card--frameworks,
+  .skills__card--languages,
+  .skills__card--tools {
+    grid-column: 1 / -1;
+  }
+
+  .skills__card--ai {
+    grid-column: 1 / span 6;
+  }
+
+  .skills__card--data {
+    grid-column: 7 / span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills__card--ai,
+  .skills__card--data {
+    grid-column: 1 / -1;
+  }
+}

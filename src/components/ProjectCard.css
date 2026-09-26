@@ -1,0 +1,136 @@
+/* Project card internals. Hover motion is transform/opacity only, so the
+   browser never repaints the card during scroll. */
+
+.project__core {
+  display: grid;
+}
+
+.project__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.project__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale3d(1.01, 1.01, 1);
+  transition: transform 1.2s var(--ease-out-expo);
+}
+
+.project:hover .project__image {
+  transform: scale3d(1.06, 1.06, 1);
+}
+
+.project__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(var(--bg-rgb) / 0.18) 0%, rgb(var(--bg-rgb) / 0.78) 100%);
+  transition: opacity 0.6s var(--ease-out-expo);
+}
+
+.project:hover .project__scrim {
+  opacity: 0.4;
+}
+
+.project__index {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-pill);
+  background: rgb(var(--bg-rgb) / 0.68);
+  color: var(--ink);
+  letter-spacing: 0.14em;
+}
+
+.project__body {
+  display: grid;
+  gap: 0.85rem;
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+}
+
+.project__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.9rem;
+}
+
+.project__date {
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project__focus {
+  color: var(--ink-dim);
+}
+
+.project__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  letter-spacing: -0.03em;
+}
+
+.project__title-icon {
+  color: var(--accent);
+  transition: transform 0.55s var(--ease-spring);
+}
+
+.project:hover .project__title-icon {
+  transform: translate3d(4px, -4px, 0);
+}
+
+.project__text {
+  color: var(--ink-muted);
+}
+
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.project__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  transition: border-color 0.4s var(--ease-out-expo), color 0.4s var(--ease-out-expo),
+    transform 0.5s var(--ease-out-expo);
+}
+
+.project__link:hover {
+  border-color: rgb(var(--accent-rgb) / 0.5);
+  color: var(--ink);
+  transform: translate3d(0, -2px, 0);
+}
+
+.project__link-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  background: var(--fill-3);
+}
+
+.project__link:hover .project__link-icon {
+  transform: translate3d(3px, -2px, 0);
+}

@@ -10,6 +10,10 @@ function menuHighlight3(){
     $("#about").css('color', 'white');
 }
 
+function details() {
+    return null;
+}
+
 function showDetails(message) {
     var details = $('#details');
     details.text(message); 
