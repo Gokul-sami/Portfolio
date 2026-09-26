@@ -5,11 +5,11 @@
       <stop offset="0" stop-color="#070a1a" />
       <stop offset="1" stop-color="#0e1229" />
     </linearGradient>
-    <radialGradient id="rq-teal" cx="0.18" cy="0.16" r="0.6">
+    <radialGradient id="rq-signal" cx="0.18" cy="0.16" r="0.6">
       <stop offset="0" stop-color="#9db4ff" stop-opacity="0.18" />
       <stop offset="1" stop-color="#9db4ff" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="rq-azure" cx="0.9" cy="0.88" r="0.62">
+    <radialGradient id="rq-counter" cx="0.9" cy="0.88" r="0.62">
       <stop offset="0" stop-color="#7c5cff" stop-opacity="0.2" />
       <stop offset="1" stop-color="#7c5cff" stop-opacity="0" />
     </radialGradient>
@@ -20,8 +20,8 @@
 
   <rect width="1600" height="1000" fill="url(#rq-bg)" />
   <rect width="1600" height="1000" fill="url(#rq-dots)" />
-  <rect width="1600" height="1000" fill="url(#rq-teal)" />
-  <rect width="1600" height="1000" fill="url(#rq-azure)" />
+  <rect width="1600" height="1000" fill="url(#rq-signal)" />
+  <rect width="1600" height="1000" fill="url(#rq-counter)" />
 
   <g fill="none" stroke="#9db4ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <path d="M250 800 520 620 800 720 1054 472 1330 590" stroke-opacity="0.85" />

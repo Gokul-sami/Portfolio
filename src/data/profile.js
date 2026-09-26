@@ -8,7 +8,7 @@ export const person = {
   name: 'Gokul Sami',
   initials: 'GS',
   roles: ['Full-stack developer', 'Backend & AI systems'],
-  tagline: 'An aspiring software developer passionate about technology and innovation',
+  tagline: 'A software developer passionate about technology and innovation',
   summary:
     'I design and build practical, user-focused digital experiences with a strong focus on clean code, responsive interfaces, and scalable web solutions.',
 }

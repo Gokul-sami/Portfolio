@@ -5,11 +5,11 @@
       <stop offset="0" stop-color="#070a1a" />
       <stop offset="1" stop-color="#0f1330" />
     </linearGradient>
-    <radialGradient id="bw-teal" cx="0.84" cy="0.14" r="0.6">
+    <radialGradient id="bw-signal" cx="0.84" cy="0.14" r="0.6">
       <stop offset="0" stop-color="#9db4ff" stop-opacity="0.18" />
       <stop offset="1" stop-color="#9db4ff" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="bw-azure" cx="0.05" cy="0.93" r="0.58">
+    <radialGradient id="bw-counter" cx="0.05" cy="0.93" r="0.58">
       <stop offset="0" stop-color="#7c5cff" stop-opacity="0.16" />
       <stop offset="1" stop-color="#7c5cff" stop-opacity="0" />
     </radialGradient>
@@ -20,8 +20,8 @@
 
   <rect width="1600" height="1000" fill="url(#bw-bg)" />
   <rect width="1600" height="1000" fill="url(#bw-grid)" />
-  <rect width="1600" height="1000" fill="url(#bw-teal)" />
-  <rect width="1600" height="1000" fill="url(#bw-azure)" />
+  <rect width="1600" height="1000" fill="url(#bw-signal)" />
+  <rect width="1600" height="1000" fill="url(#bw-counter)" />
 
   <rect
     x="96"

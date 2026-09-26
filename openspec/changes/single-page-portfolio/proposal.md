@@ -15,9 +15,10 @@ current developer portfolio.
   link that pointed at it (home footer, about contact list, the third project card).
 - Drop `react-router-dom`; the active nav state is now derived from an IntersectionObserver
   scroll-spy instead of the current route.
-- Introduce a new visual system: graphite-black surfaces, a teal signal colour, hairline borders and
+- Introduce a new visual system: dark surfaces, a single signal colour, hairline borders and
   inset highlights instead of grey borders, Clash Display / Plus Jakarta Sans / JetBrains Mono,
   floating pill navigation, double-bezel cards, asymmetric bento and staggered project grids.
+  (The surfaces and the signal colour were revised by `portfolio-recolour` — see the note below.)
 - Add the modern interaction set: scroll reveals, reading-progress bar, pointer sheen on cards,
   two-direction technology marquee, copy-address-to-clipboard, back-to-top, and a full-screen
   mobile menu with staggered link reveals.
