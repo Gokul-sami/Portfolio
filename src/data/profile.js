@@ -21,7 +21,7 @@ export const heroFacts = [
   { label: 'Now', value: 'Trainee Developer at Straive' },
   { label: 'Based in', value: 'Chennai, India' },
   { label: 'Focus', value: 'Java · Spring Boot · React · AI integration' },
-  { label: 'Studying', value: 'B.E. CSE, LICET · CGPA 8.32' },
+  { label: 'Graduated', value: 'B.E. CSE, LICET · 2026 · CGPA 8.32' },
 ]
 
 /** In-page navigation (scroll-spy targets). */
@@ -43,7 +43,7 @@ export const socials = {
 
 /** Headline numbers, all traceable to the résumé. */
 export const stats = [
-  { value: '04', label: 'Shipped projects' },
+  { value: '06', label: 'Shipped projects' },
   { value: '03', label: 'Industry internships' },
   { value: '26', label: 'Technologies in use' },
 ]
@@ -103,7 +103,7 @@ export const about = {
   facts: [
     {
       label: 'Education',
-      value: 'B.E. Computer Science & Engineering, LICET (2022–2026)',
+      value: 'B.E. Computer Science & Engineering, LICET — graduated 2026',
     },
     { label: 'CGPA', value: '8.32' },
     {

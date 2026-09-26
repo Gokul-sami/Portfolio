@@ -1,40 +1,40 @@
 /* ============================================================================
-   Design system — Ethereal Glass (graphite black, teal signal, azure glow)
-   Modernised from the original styles.css identity: dark shell, muted ink and
-   light hover feedback. jQuery and Bootstrap layers are gone.
+   Design system — Ethereal Glass, "Iris" (deep indigo, periwinkle signal,
+   violet glow). Modernised from the original styles.css identity: dark shell,
+   muted ink and light hover feedback. jQuery and Bootstrap layers are gone.
    ========================================================================= */
 
 :root {
   color-scheme: dark;
 
-  /* Surfaces — cool graphite, no warm/yellow cast anywhere */
-  --bg: #050708;
-  --bg-rgb: 5 7 8;
-  --surface: #0a0d0e;
-  --surface-rgb: 10 13 14;
-  --surface-2: #101415;
-  --surface-3: #171c1e;
+  /* Surfaces — deep indigo, cool throughout (no warm/yellow cast anywhere) */
+  --bg: #060814;
+  --bg-rgb: 6 8 20;
+  --surface: #0b0e1e;
+  --surface-rgb: 11 14 30;
+  --surface-2: #111534;
+  --surface-3: #181d42;
 
-  /* Ink */
-  --ink: #f1f5f6;
-  --ink-soft: #b7c1c4;
-  --ink-muted: #899396;
-  --ink-dim: #5e676a;
+  /* Ink — blue-white, matched to the indigo neutrals */
+  --ink: #f0f2fd;
+  --ink-soft: #b8bee0;
+  --ink-muted: #8b92ba;
+  --ink-dim: #6b729c;
 
-  /* Signal colour: teal #2ee6c5 — deliberately neither acid yellow nor the
-     default AI purple. 13:1 on --bg, so it is safe for text, labels and the
-     primary action (with --accent-ink on top). */
-  --accent: #2ee6c5;
-  --accent-soft: #7cf2dd;
-  --accent-deep: #14b39a;
-  --accent-ink: #03201b;
-  --accent-rgb: 46 230 197;
+  /* Signal colour: periwinkle #9db4ff — deliberately neither acid lime nor the
+     default AI purple. 9.9:1 on --bg (9.5:1 on --surface), so it is safe for
+     text, labels and the primary action (with --accent-ink on top, 9.2:1). */
+  --accent: #9db4ff;
+  --accent-soft: #c8d5ff;
+  --accent-deep: #6f8ae0;
+  --accent-ink: #0a0f2e;
+  --accent-rgb: 157 180 255;
 
-  /* Counter-glow: cool azure. Atmosphere only — never used for text or UI
-     state, so teal stays the single signal colour. */
-  --accent-2: #4d9cff;
-  --accent-2-soft: #8fc0ff;
-  --accent-2-rgb: 77 156 255;
+  /* Counter-glow: violet. Atmosphere only — never used for text or UI state,
+     so periwinkle stays the single signal colour. */
+  --accent-2: #7c5cff;
+  --accent-2-soft: #ab95ff;
+  --accent-2-rgb: 124 92 255;
 
   /* Hairlines & translucent fills */
   --hairline: rgb(255 255 255 / 0.08);
@@ -179,7 +179,7 @@ button {
   border-radius: 50%;
 }
 
-.backdrop__orb--teal {
+.backdrop__orb--glow {
   top: -22rem;
   right: -14rem;
   width: 54rem;
@@ -188,7 +188,7 @@ button {
   animation: orb-a 28s var(--ease-in-out-quint) infinite alternate;
 }
 
-.backdrop__orb--azure {
+.backdrop__orb--counter {
   top: 42%;
   left: -20rem;
   width: 46rem;
@@ -202,7 +202,7 @@ button {
   bottom: -24rem;
   width: 40rem;
   height: 40rem;
-  background: radial-gradient(circle, rgb(150 200 255 / 0.08), transparent 66%);
+  background: radial-gradient(circle, rgb(160 175 230 / 0.07), transparent 66%);
   animation: orb-a 40s var(--ease-in-out-quint) infinite alternate-reverse;
 }
 
@@ -547,13 +547,45 @@ body.is-locked {
 .reveal {
   opacity: 0;
   transform: translate3d(0, 1.4rem, 0);
-  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo),
+    filter 0.9s var(--ease-out-expo);
   transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Direction variants — [data-reveal] is written by <Reveal variant="…" />. */
+.reveal[data-reveal='left'] {
+  transform: translate3d(-2.6rem, 0.75rem, 0);
+}
+
+.reveal[data-reveal='right'] {
+  transform: translate3d(2.6rem, 0.75rem, 0);
+}
+
+.reveal[data-reveal='scale'] {
+  transform: scale3d(0.94, 0.94, 1);
+}
+
+.reveal[data-reveal='blur'] {
+  filter: blur(10px);
+  transform: translate3d(0, 1rem, 0);
 }
 
 .reveal.is-revealed {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
+  filter: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll-linked drift (useParallax writes --parallax)
+   ------------------------------------------------------------------------ */
+
+/* The independent `translate` property is used on purpose: it composes with the
+   transform-based reveals, hover lifts and orb keyframes instead of replacing
+   them, and it is a compositor-only property. */
+.backdrop__orb,
+.project__media-drift {
+  translate: 0 var(--parallax, 0px);
 }
 
 /* ---------------------------------------------------------------------------
@@ -578,6 +610,12 @@ body.is-locked {
   .reveal {
     opacity: 1;
     transform: none;
+    filter: none;
+  }
+
+  .backdrop__orb,
+  .project__media-drift {
+    translate: none;
   }
 }
 

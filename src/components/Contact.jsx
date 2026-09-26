@@ -35,7 +35,7 @@ export default function Contact() {
         />
 
         <div className="contact__grid">
-          <Reveal className="bezel bezel--spot contact__panel" delay={60}>
+          <Reveal className="bezel bezel--spot contact__panel" variant="scale" delay={60}>
             <div className="bezel__core contact__panel-core">
               <span className="contact__glow" aria-hidden="true" />
               <p className="mono contact__label">Email</p>
@@ -68,7 +68,7 @@ export default function Contact() {
           <div className="contact__aside">
             <ul className="contact__list">
               {contactLinks.map((link, index) => (
-                <Reveal as="li" key={link.id} delay={index * 60}>
+                <Reveal as="li" key={link.id} variant="right" delay={index * 60}>
                   <a className="contact__link" href={link.href} {...hintHandlers(link.hint)}>
                     <span className="contact__link-icon" aria-hidden="true">
                       <Icon name={link.icon} width={18} height={18} />

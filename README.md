@@ -39,7 +39,7 @@ One document, five anchored sections, in the order the portfolio guidance recomm
 | --- | --- | --- |
 | `#top` | Hero | Roles, tagline, calls to action, résumé colophon, headline stats |
 | (ticker) | Technology bands | Two marquee rows covering the full skills list |
-| `#work` | Selected work | Blog platform, OptiDetect, ResQConnect and StudyPlanner — scope, stack tags, cover art and links |
+| `#work` | Selected work | OptiDetect, StudyPlanner, the blog platform and ResQConnect — scope, stack tags, cover art and links |
 | `#about` | About | Summary and the six profile facts |
 | `#skills` | Toolkit | Five skill groups in a bento grid |
 | `#contact` | Contact | Visible email, copy action and four destinations |
@@ -55,9 +55,10 @@ One document, five anchored sections, in the order the portfolio guidance recomm
   links) and `projects.js` (the four project cards, their images and links).
 - `src/hooks/`: `useReveal`, `useScrollSpy`, `useLockBodyScroll`, `useCopyToClipboard`.
 - `src/styles/global.css`: design tokens, base reset, fixed backdrop, shared primitives.
-- `images/`: image assets, imported by the components so Vite fingerprints them. The three résumé
-  projects use drawn SVG covers (`optidetect.svg`, `resqconnect.svg`, `studyplanner.svg`) — to use a
-  real screenshot instead, drop the file in and change the import in `src/data/projects.js`.
+- `images/`: image assets, imported by the components so Vite fingerprints them. All four project
+  covers are drawn SVG diagrams in the site palette (`optidetect.svg`, `studyplanner.svg`,
+  `blog.svg`, `resqconnect.svg`) — to use a real screenshot instead, drop the file in, change the
+  matching import in `src/data/projects.js` and set its `position` framing.
 - `public/`: copied verbatim into the build — currently the 1200×630 social preview card
   (`og-cover.png`), which `index.html` references as an absolute URL.
 - `legacy/`: the original multi-page static HTML/CSS/JS site, kept for reference.
@@ -89,12 +90,12 @@ To set up the project locally, follow these steps:
 - `npm run preview` – serve the built `dist/` locally to sanity-check the build.
 
 ## Design System
-- **Surface**: graphite-black base (`#050708`) with a fixed backdrop of drifting radial orbs, a masked
+- **Surface**: deep-indigo base (`#060814`) with a fixed backdrop of drifting radial orbs, a masked
   grid and a subtle grain overlay. Cards use nested "shell + core" panels with white hairline
   borders instead of grey outlines.
-- **Signal colour**: a single teal accent (`#2ee6c5`) for labels, the active nav entry, the primary
-  action and the highlights, plus one cool azure (`#4d9cff`) reserved for large soft glows — never
-  for text or UI state, so teal stays the only signal.
+- **Signal colour**: a single periwinkle accent (`#9db4ff`) for labels, the active nav entry, the
+  primary action and the highlights, plus one violet (`#7c5cff`) reserved for large soft glows —
+  never for text or UI state, so periwinkle stays the only signal.
 - **Type**: Clash Display for headings, Plus Jakarta Sans for body copy, JetBrains Mono for labels
   and metadata.
 - **Layout**: an editorial split hero, an asymmetric bento grid for skills, and a staggered project
@@ -105,10 +106,17 @@ To set up the project locally, follow these steps:
 ## Accessibility & Motion
 - Skip link, visible focus rings, `aria-current` on the active nav entry, `aria-labelledby` on every
   section, and live regions for the contact hint and the copy confirmation.
-- Animations only touch `transform` and `opacity`; blurred overlays are limited to fixed elements
-  (nav, menu panel, back-to-top) to avoid repainting scrolling content.
-- `prefers-reduced-motion: reduce` disables the reveals, the marquee, the hero entrance and their
-  delays, leaving all content visible.
+- Animations only touch `transform`, `translate`, `opacity` and — on section headers only — `filter`;
+  blurred overlays are limited to fixed elements (nav, menu panel, back-to-top) to avoid repainting
+  scrolling content.
+- Scroll motion is layered: sections enter through `Reveal` (fade-up, and directional `left` /
+  `right` / `scale` / `blur` variants), while `useParallax` drifts the backdrop orbs and the project
+  covers against the page. The parallax writes `--parallax` and is consumed through CSS's
+  independent `translate` property, so it composes with the reveals instead of fighting them, and
+  the hook measures every element before writing any style (two passes per frame, one passive
+  scroll listener, no per-element listeners).
+- `prefers-reduced-motion: reduce` disables the reveals, the marquee, the hero entrance, the parallax
+  and their delays, leaving all content visible.
 - Project images below the fold are lazy-loaded and sized with CSS `aspect-ratio` to avoid layout
   shift.
 
@@ -129,8 +137,9 @@ reference — including the colour splash page, which was removed from the live 
 
 ## Features
 - **Single-page navigation:** anchored sections with a scroll-spy menu, progress bar and back-to-top.
-- **Work showcase:** the blog platform plus the three résumé projects, each with scope, stack tags,
-  cover art and source links.
+- **Work showcase:** the four featured projects in résumé order (OptiDetect, StudyPlanner, the blog
+  platform, ResQConnect), each with scope, stack tags, cover art and source links — part of the six
+  shipped projects counted in the hero.
 - **Toolkit bento:** skills grouped by where they sit in a project.
 - **Direct contact:** the email address in plain text, a mailto action and copy-to-clipboard.
 - **Responsive & fast:** no runtime dependencies beyond React, lazy images, reduced-motion support.

@@ -6,6 +6,7 @@ import './Skills.css'
 /**
  * Capabilities as an asymmetrical bento grid: 7+5 on the first row, then three
  * equal cards. Every group is text-labelled (no icon-only chips, no meters).
+ * Cards scale in on a 60ms stagger so the grid assembles rather than appearing.
  */
 export default function Skills() {
   return (
@@ -23,6 +24,7 @@ export default function Skills() {
             <Reveal
               key={group.id}
               className={`bezel bezel--spot bezel--lift skills__card skills__card--${group.id}`}
+              variant="scale"
               delay={index * 60}
             >
               <div className="bezel__core skills__core">

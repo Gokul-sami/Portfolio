@@ -28,7 +28,7 @@ export default function About() {
           </Reveal>
         </div>
 
-        <Reveal className="bezel about__facts" delay={60}>
+        <Reveal className="bezel about__facts" variant="right" delay={60}>
           <dl className="bezel__core about__facts-core">
             {about.facts.map((fact) => (
               <div className="about__fact" key={fact.label}>

@@ -36,10 +36,10 @@ and reduced-motion support treated as part of the work sample.
   section is the one crossing the middle of the viewport. `#top` (the hero) maps to "nothing
   active", which keeps the nav clean at the top of the page. `ids` is a module-level array so the
   observer is created once.
-- **Design read: Ethereal Glass with an editorial-technical voice.** Graphite-black base (`#050708`,
-  revised from `#060607` by `portfolio-recolour`), a single teal signal colour (`#2ee6c5`) instead
-  of the default purple-gradient look and of the original acid-lime (`#cdfa4e`) — see
-  `portfolio-recolour` — one azure atmosphere tone (`#4d9cff`) for large soft glows only, white
+- **Design read: Ethereal Glass with an editorial-technical voice.** Deep-indigo base (`#060814`,
+  revised from `#060607` by `portfolio-recolour`), a single periwinkle signal colour (`#9db4ff`)
+  instead of the default purple-gradient look and of the original acid-lime (`#cdfa4e`) — see
+  `portfolio-recolour` — one violet atmosphere tone (`#7c5cff`) for large soft glows only, white
   hairlines (`rgb(255 255 255 / 0.08)`) instead of grey 1px borders, and diffuse shadows. Dials:
   variance 8 (asymmetric), motion 6, density 4 (airy).
 - **Typography:** Clash Display for headings, Plus Jakarta Sans for body, JetBrains Mono for labels
@@ -53,9 +53,12 @@ and reduced-motion support treated as part of the work sample.
   squircles, and the pointer sheen writes `--mx/--my` straight to the node instead of re-rendering
   React.
 - **Motion budget:** one wow moment (the hero's drifting orbs, oversized gradient name and
-  staggered entrance), then quiet reveals elsewhere. Animations only touch `transform` and
-  `opacity`; `backdrop-filter` is used only on the fixed nav, the menu panel and the back-to-top
-  button; the grain overlay is fixed and `pointer-events: none`.
+  staggered entrance), then quiet reveals elsewhere. `portfolio-recolour` extended this with
+  directional reveals (`left` / `right` / `scale` / `blur`) and a bounded scroll-linked parallax on
+  the orbs and the project covers — see that change — so the budget now animates `transform`,
+  `translate`, `opacity` and, on section headers only, `filter`. `backdrop-filter` is used only on
+  the fixed nav, the menu panel and the back-to-top button; the grain overlay is fixed and
+  `pointer-events: none`.
 - **The portrait is blended, not boxed.** The photo has a black background, so it uses
   `mix-blend-mode: screen` over the card gradient, which removes the visible image rectangle. (The
   card itself was removed by `portfolio-recolour` in favour of a definition-list colophon of résumé
@@ -91,7 +94,7 @@ and reduced-motion support treated as part of the work sample.
   both stacks fall back to system fonts.
 - [A bright accent is a strong choice] → the accent is used only as a signal (labels, active nav,
   primary action, focus) and text pairings were checked against the base. The original lime was
-  later swapped for teal on the same rule — see `portfolio-recolour`.
+  later swapped for periwinkle over deep indigo on the same rule — see `portfolio-recolour`.
 - [Heavy screenshots below the fold] → project images are lazy-loaded and sized by CSS
   `aspect-ratio`, so there is no layout shift.
 - [Reduced-motion users lose the entrance choreography] → intentional; content is fully visible

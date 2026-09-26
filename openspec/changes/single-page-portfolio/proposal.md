@@ -21,10 +21,10 @@ current developer portfolio.
 - Add the modern interaction set: scroll reveals, reading-progress bar, pointer sheen on cards,
   two-direction technology marquee, copy-address-to-clipboard, back-to-top, and a full-screen
   mobile menu with staggered link reveals.
-- The signal colour (lime → teal), the base (OLED black → graphite) and the hero's right column
-  (portrait → résumé colophon) were revised in
+- The signal colour (lime → periwinkle), the base (OLED black → deep indigo) and the hero's right
+  column (portrait → résumé colophon) were revised in
   [`portfolio-recolour`](../portfolio-recolour/proposal.md); the project set was aligned with the
-  résumé in the same change.
+  résumé, the scroll motion extended, and the link-preview card re-cut in the same change.
 - Keep the content and behaviour that matter: all four projects with their descriptions, dates,
   images and external links; the full skills list, grouped by category; the six profile facts; the
   contact list with its hover/focus hints; the `<p>`-tagged tagline; and every existing URL.
