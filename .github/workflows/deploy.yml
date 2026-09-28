@@ -10,9 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+# One Pages deployment at a time. `cancel-in-progress` stays false on purpose:
+# a deploy cancelled mid-flight can leave the published site serving the previous
+# revision, so a queued run waits its turn instead.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
