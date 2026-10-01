@@ -37,22 +37,22 @@ One document, five anchored sections, in the order the portfolio guidance recomm
 
 | Anchor | Section | Contents |
 | --- | --- | --- |
-| `#top` | Hero | Roles, tagline, calls to action, résumé colophon, headline stats |
-| (ticker) | Technology bands | Two marquee rows covering the full skills list |
+| `#top` | Masthead | Roles, name, tagline, the contact line, the résumé colophon and the headline numbers as one line |
 | `#work` | Selected work | OptiDetect, StudyPlanner, the blog platform and ResQConnect — scope, stack tags, cover art and links |
-| `#about` | About | Summary and the six profile facts |
-| `#skills` | Toolkit | Five skill groups in a bento grid |
+| `#about` | About | The biography in the first person and the six profile facts |
+| `#skills` | Skills | Five skill groups in a bento grid |
 | `#contact` | Contact | Visible email, copy action and four destinations |
 
 ## File Structure
 - `index.html`: Vite entry — fonts, document metadata, link-preview tags and the `#root` mount point.
 - `src/main.jsx`: React root. Imports `global.css` first so component styles win specificity ties.
 - `src/App.jsx`: page composition (backdrop, scroll progress, navbar, sections, footer).
-- `src/components/`: one component per page section (`Hero`, `TechMarquee`, `Work`, `About`,
-  `Skills`, `Contact`, `Footer`) plus the shell (`Navbar`, `ScrollProgress`, `BackToTop`, `Reveal`,
-  `SectionHead`, `ProjectCard`, `Icon`, `icons`), each with its own stylesheet.
-- `src/data/`: `profile.js` (identity, sections, socials, stats, skills and groups, facts, contact
-  links) and `projects.js` (the four project cards, their images and links).
+- `src/components/`: one component per page section (`Hero`, `Work`, `About`, `Skills`, `Contact`,
+  `Footer`) plus the shell (`Navbar`, `ScrollProgress`, `BackToTop`, `Reveal`, `SectionHead`,
+  `ProjectCard`, `Icon`, `icons`), each with its own stylesheet.
+- `src/data/`: `profile.js` (identity, sections, socials, hero contact links, stats and the derived
+  one-line version, skill groups, about facts, contact links) and `projects.js` (the four project
+  cards, their images and links).
 - `src/hooks/`: `useReveal`, `useScrollSpy`, `useLockBodyScroll`, `useCopyToClipboard`.
 - `src/styles/global.css`: design tokens, base reset, fixed backdrop, shared primitives.
 - `images/`: image assets, imported by the components so Vite fingerprints them. All four project
@@ -98,8 +98,10 @@ To set up the project locally, follow these steps:
   never for text or UI state, so periwinkle stays the only signal.
 - **Type**: Clash Display for headings, Plus Jakarta Sans for body copy, JetBrains Mono for labels
   and metadata.
-- **Layout**: an editorial split hero, an asymmetric bento grid for skills, and a staggered project
-  grid (7+5, then 5+7) that collapses to a single column on smaller screens.
+- **Layout**: a CV-style masthead (name, tagline, contact line, résumé colophon), an asymmetric bento
+  grid for skills, and a staggered project grid (7+5, then 5+7) that collapses to a single column on
+  smaller screens. Section titles sit at document scale rather than campaign scale, and the work
+  section opens tighter than the rest so the first cover lands on the first screen.
 - **Tokens**: colours, radii, type stacks, easing curves and z-index layers are defined once in
   `:root`, so retheming is a handful of variable edits.
 
@@ -115,8 +117,8 @@ To set up the project locally, follow these steps:
   independent `translate` property, so it composes with the reveals instead of fighting them, and
   the hook measures every element before writing any style (two passes per frame, one passive
   scroll listener, no per-element listeners).
-- `prefers-reduced-motion: reduce` disables the reveals, the marquee, the hero entrance, the parallax
-  and their delays, leaving all content visible.
+- `prefers-reduced-motion: reduce` disables the reveals, the masthead entrance, the parallax and their
+  delays, leaving all content visible.
 - Project images below the fold are lazy-loaded and sized with CSS `aspect-ratio` to avoid layout
   shift.
 
@@ -137,10 +139,13 @@ reference — including the colour splash page, which was removed from the live 
 
 ## Features
 - **Single-page navigation:** anchored sections with a scroll-spy menu, progress bar and back-to-top.
+- **Portfolio masthead:** the résumé header — name, tagline, a plain contact line (email, GitHub,
+  LinkedIn, résumé) and the current role, location, focus and graduation — with the headline numbers as
+  one line of text instead of a metric band.
 - **Work showcase:** the four featured projects in résumé order (OptiDetect, StudyPlanner, the blog
   platform, ResQConnect), each with scope, stack tags, cover art and source links — part of the six
-  shipped projects counted in the hero.
-- **Toolkit bento:** skills grouped by where they sit in a project.
+  shipped projects counted in the masthead.
+- **Skills bento:** skills grouped by where they sit in a project, listed once (no scrolling ticker).
 - **Direct contact:** the email address in plain text, a mailto action and copy-to-clipboard.
 - **Responsive & fast:** no runtime dependencies beyond React, lazy images, reduced-motion support.
 

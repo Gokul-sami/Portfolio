@@ -17,9 +17,9 @@ export default function Work() {
     <section className="section work" id="work" aria-labelledby="work-title">
       <div className="shell">
         <SectionHead
-          index="01 — Selected work"
-          title="Projects I have built end to end."
-          lede="An AI screening app, a cross-platform study planner, a blogging platform and a rescue-coordination platform — each entry says what it does, the stack behind it and where to find it."
+          index="01 — Work"
+          title="Selected work."
+          lede="Four projects, in the order I would talk about them: what each one does, what I built it with, and where to find the code or the live site."
           titleId="work-title"
         />
 

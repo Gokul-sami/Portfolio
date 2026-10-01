@@ -4,12 +4,11 @@ import { about, person } from '../data/profile'
 import './About.css'
 
 /**
- * About: editorial split with the biography on the left and the profile facts
+ * About: the biography in the first person on the left — this is the only place
+ * the page talks about the person rather than the work — and the profile facts
  * (previously the About page's bullet list) as a definition grid on the right.
  */
 export default function About() {
-  const [primaryRole, secondaryRole] = person.roles
-
   return (
     <section className="section about" id="about" aria-labelledby="about-title">
       <div className="shell about__grid">
@@ -20,12 +19,6 @@ export default function About() {
             lede={person.summary}
             titleId="about-title"
           />
-          <Reveal className="about__roles" delay={120}>
-            <p className="eyebrow">
-              <span className="eyebrow__dot" aria-hidden="true" />
-              {primaryRole} · {secondaryRole}
-            </p>
-          </Reveal>
         </div>
 
         <Reveal className="bezel about__facts" variant="right" delay={60}>

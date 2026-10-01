@@ -1,48 +1,42 @@
-/* Editorial-split hero. Entrance is a one-shot staggered rise (transform +
+/* Portfolio masthead. The entrance is a one-shot staggered rise (transform +
    opacity only); the drifting orbs live in the fixed backdrop. */
 
 .hero {
   position: relative;
-  padding-block: clamp(7.5rem, 15vh, 10.5rem) clamp(2.5rem, 6vw, 4rem);
+  padding-block: clamp(6.5rem, 13vh, 9rem) clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
-/* Hero layout: copy on the left, résumé colophon on the right. */
+/* Name and tagline on the left, résumé colophon on the right. */
 
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: end;
 }
 
 .hero__copy {
   display: grid;
-  gap: 1.5rem;
-  max-width: 54rem;
+  gap: 1.35rem;
+  max-width: 44rem;
 }
 
 .hero__eyebrow {
   color: var(--ink-muted);
 }
 
+/* Document scale, not wordmark scale: the name reads as the top of a CV, and
+   it stays solid ink so it never turns into a logo. The accent full stop is the
+   only decoration. */
 .hero__name {
-  font-size: clamp(3.1rem, 11.5vw, 8rem);
-  line-height: 0.88;
-  letter-spacing: -0.05em;
+  color: var(--ink);
+  font-size: clamp(2.4rem, 6.4vw, 4.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
 }
 
-.hero__name-line {
-  display: block;
-  background: linear-gradient(
-    104deg,
-    var(--ink) 0%,
-    var(--ink) 44%,
-    var(--accent) 78%,
-    var(--accent-2) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero__name-stop {
+  color: var(--accent);
 }
 
 .hero__tagline {
@@ -60,47 +54,51 @@
   font-size: 0.85em;
 }
 
-.hero__actions {
+/* Contact line — a CV header row of plain links, deliberately not buttons, so
+   the first screen reads as a person's page rather than a product page. */
+
+.hero__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.5rem 1.4rem;
+  padding-top: 0.35rem;
 }
 
-/* Headline numbers: full-width band, one cell per stat. */
-
-.hero__stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: clamp(2.5rem, 6vw, 4rem);
-  border-top: 1px solid var(--hairline);
-}
-
-.hero__stat {
-  display: grid;
-  gap: 0.25rem;
-  padding: 1.7rem clamp(1rem, 2vw, 1.9rem) 0 0;
-}
-
-.hero__stat + .hero__stat {
-  padding-left: clamp(1rem, 2vw, 1.9rem);
-  border-left: 1px solid var(--hairline);
-}
-
-.hero__stat-value {
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.hero__stat-label {
-  color: var(--ink-dim);
+.hero__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.38em;
+  transition: color 0.4s var(--ease-out-expo), text-decoration-color 0.4s var(--ease-out-expo);
+}
+
+.hero__link svg {
+  flex: none;
+  opacity: 0.75;
+  transition: opacity 0.4s var(--ease-out-expo);
+}
+
+.hero__link:hover {
+  color: var(--accent);
+  text-decoration-color: rgb(var(--accent-rgb) / 0.5);
+}
+
+.hero__link:hover svg {
+  opacity: 1;
+}
+
+/* Headline numbers as one line of text — the fact survives, the metric band
+   does not. */
+.hero__glance {
+  color: var(--ink-dim);
+  letter-spacing: 0.04em;
 }
 
 /* ---------------------------------------------------------------------------
@@ -148,7 +146,7 @@
    ------------------------------------------------------------------------ */
 
 .hero__foot {
-  margin-top: clamp(2.5rem, 6vw, 4rem);
+  margin-top: clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
 .hero__scroll {
@@ -192,7 +190,6 @@
 
 .hero__copy > *,
 .hero__facts,
-.hero__stats,
 .hero__foot {
   animation: rise-in 1s var(--ease-out-expo) both;
   animation-delay: calc(var(--i, 0) * 110ms + 120ms);
@@ -216,21 +213,12 @@
 }
 
 @media (max-width: 560px) {
-  .hero__stats {
-    grid-template-columns: minmax(0, 1fr);
+  .hero__links {
+    gap: 0.5rem 1rem;
   }
 
-  .hero__stat {
-    padding: 1.1rem 0;
-    border-bottom: 1px solid var(--hairline);
-  }
-
-  .hero__stat + .hero__stat {
-    padding-left: 0;
-    border-left: 0;
-  }
-
-  .hero__stat:last-child {
-    border-bottom: 0;
+  .hero__glance {
+    /* The three numbers read better on two lines than as a wrapped sentence. */
+    max-width: 22rem;
   }
 }

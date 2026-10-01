@@ -8,9 +8,10 @@ export const person = {
   name: 'Gokul Sami',
   initials: 'GS',
   roles: ['Full-stack developer', 'Backend & AI systems'],
-  tagline: 'A software developer passionate about technology and innovation',
+  tagline:
+    'I build web apps end to end — React and Vite on the front, Java, Spring Boot and Node behind them.',
   summary:
-    'I design and build practical, user-focused digital experiences with a strong focus on clean code, responsive interfaces, and scalable web solutions.',
+    'I finished my B.E. in Computer Science at LICET in 2026 and I am now a trainee developer at Straive in Chennai. I learn by building, so the projects below are how I picked up Spring Boot, React, Node and more recently deep learning. The work I enjoy most is backend — APIs, data modelling, and getting AI models into applications people actually use.',
 }
 
 /**
@@ -41,12 +42,26 @@ export const socials = {
     'https://drive.google.com/file/d/1_fnC7nIyHBOhbWHUcHJqH6WaFbB-KwXo/view?usp=sharing',
 }
 
+/**
+ * The hero contact line: plain destinations, not calls to action. Email first,
+ * because it is the one a recruiter actually uses.
+ */
+export const heroLinks = [
+  { id: 'email', icon: 'mail', label: socials.email, href: `mailto:${socials.email}` },
+  { id: 'github', icon: 'github', label: 'GitHub', href: socials.github },
+  { id: 'linkedin', icon: 'linkedin', label: 'LinkedIn', href: socials.linkedin },
+  { id: 'resume', icon: 'file', label: 'Résumé', href: socials.resume },
+]
+
 /** Headline numbers, all traceable to the résumé. */
 export const stats = [
   { value: '06', label: 'Shipped projects' },
   { value: '03', label: 'Industry internships' },
   { value: '26', label: 'Technologies in use' },
 ]
+
+/** The same numbers as one sentence, so the hero reads as a CV line. */
+export const statsLine = stats.map((stat) => `${stat.value} ${stat.label.toLowerCase()}`).join(' · ')
 
 /** Grouped for the capabilities bento grid — the current résumé skill list. */
 export const skillGroups = [
@@ -95,9 +110,6 @@ export const skillGroups = [
     items: ['AWS', 'Azure', 'Git', 'Jenkins'],
   },
 ]
-
-/** Flat list for the scrolling ticker — derived, so it can never drift. */
-export const skills = skillGroups.flatMap((group) => group.items)
 
 export const about = {
   facts: [

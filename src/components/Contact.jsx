@@ -29,8 +29,8 @@ export default function Contact() {
       <div className="shell">
         <SectionHead
           index="04 — Contact"
-          title="Let's build something."
-          lede="Open to conversations about web, mobile and cloud work — the links below all reach me."
+          title="Get in touch."
+          lede="Open to conversations about web, mobile and cloud work — email is the fastest way to reach me."
           titleId="contact-title"
         />
 

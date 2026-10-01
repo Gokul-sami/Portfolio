@@ -1,5 +1,11 @@
 /* Asymmetric editorial grid for the project cards. */
 
+/* The work section follows the masthead, so it opens tighter than the sections
+   below it — the first cover should show up on the first screen. */
+.section.work {
+  padding-block-start: clamp(3rem, 6vw, 5rem);
+}
+
 .work__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

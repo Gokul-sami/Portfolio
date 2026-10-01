@@ -13,8 +13,8 @@ export default function Skills() {
     <section className="section skills" id="skills" aria-labelledby="skills-title">
       <div className="shell">
         <SectionHead
-          index="03 — Toolkit"
-          title="The stack behind those builds."
+          index="03 — Skills"
+          title="Tools I work in."
           lede="Grouped by where each tool sits in a project — the interface, the server, the models, the data and the delivery pipeline."
           titleId="skills-title"
         />

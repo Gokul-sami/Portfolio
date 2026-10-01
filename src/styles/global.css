@@ -278,8 +278,10 @@ button {
   color: var(--accent);
 }
 
+/* Section titles at document scale rather than campaign scale: the page should
+   read like a CV someone is scrolling, not a landing page someone is pitching. */
 .section__title {
-  font-size: clamp(2.1rem, 4.6vw, 3.5rem);
+  font-size: clamp(1.85rem, 3.3vw, 2.5rem);
 }
 
 .section__lede {

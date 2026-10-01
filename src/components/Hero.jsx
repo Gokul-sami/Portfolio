@@ -1,12 +1,14 @@
 import Icon from './Icon'
-import { heroFacts, person, stats } from '../data/profile'
+import { heroFacts, heroLinks, person, statsLine } from '../data/profile'
 import './Hero.css'
 
 /**
- * Editorial hero — no portrait. The copy runs wide on the left, the résumé
- * colophon fills the right column, and the headline numbers close the section
- * on a full-width hairline. The original two role headings and the
- * "<p> … </p>" tagline are kept.
+ * Portfolio masthead — the first screen of a CV, not a landing hero. The name
+ * sits at document scale, the tagline keeps its `<p>` brackets, and the two
+ * calls to action are gone: what a recruiter needs is one line of plain
+ * destinations (email, GitHub, LinkedIn, résumé) and the résumé colophon on the
+ * right. The headline numbers survive as a single mono line, so the work itself
+ * moves up the page.
  */
 export default function Hero() {
   const [primaryRole, secondaryRole] = person.roles
@@ -21,7 +23,10 @@ export default function Hero() {
           </p>
 
           <h1 className="hero__name" style={{ '--i': 1 }}>
-            <span className="hero__name-line">{person.name}</span>
+            {person.name}
+            <span className="hero__name-stop" aria-hidden="true">
+              .
+            </span>
           </h1>
 
           <p className="hero__tagline" style={{ '--i': 2 }}>
@@ -34,24 +39,23 @@ export default function Hero() {
             </span>
           </p>
 
-          <div className="hero__actions" style={{ '--i': 3 }}>
-            <a className="btn btn--primary" href="#work">
-              View selected work
-              <span className="btn__icon">
-                <Icon name="arrow-up-right" width={14} height={14} />
-              </span>
-            </a>
-            <a className="btn btn--ghost" href="#contact">
-              Get in touch
-              <span className="btn__icon">
-                <Icon name="arrow-up-right" width={14} height={14} />
-              </span>
-            </a>
-          </div>
+          <ul className="hero__links" style={{ '--i': 3 }}>
+            {heroLinks.map((link) => (
+              <li key={link.id}>
+                <a className="hero__link" href={link.href}>
+                  <Icon name={link.icon} width={15} height={15} />
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
+          <p className="mono hero__glance" style={{ '--i': 4 }}>
+            {statsLine}
+          </p>
         </div>
 
-        <dl className="hero__facts" style={{ '--i': 4 }}>
+        <dl className="hero__facts" style={{ '--i': 5 }}>
           {heroFacts.map((fact) => (
             <div className="hero__fact" key={fact.label}>
               <dt className="mono hero__fact-label">{fact.label}</dt>
@@ -61,20 +65,9 @@ export default function Hero() {
         </dl>
       </div>
 
-      <div className="shell">
-        <ul className="hero__stats" style={{ '--i': 5 }}>
-          {stats.map((stat) => (
-            <li className="hero__stat" key={stat.label}>
-              <span className="hero__stat-value">{stat.value}</span>
-              <span className="hero__stat-label">{stat.label}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <div className="shell hero__foot" style={{ '--i': 6 }}>
         <a className="hero__scroll" href="#work">
-          <span className="mono">Scroll for selected work</span>
+          <span className="mono">Selected work</span>
           <Icon name="arrow-up" width={14} height={14} />
         </a>
       </div>

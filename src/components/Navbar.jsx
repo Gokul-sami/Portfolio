@@ -75,11 +75,13 @@ export default function Navbar() {
             >
               <Icon name="linkedin" />
             </a>
-            <a className="btn btn--primary nav__cta" href="#contact">
-              Let&apos;s talk
-              <span className="btn__icon">
-                <Icon name="arrow-up-right" width={14} height={14} />
-              </span>
+            <a
+              className="nav__icon"
+              href={`mailto:${socials.email}`}
+              aria-label="Email"
+              title="Email"
+            >
+              <Icon name="mail" />
             </a>
             <button
               type="button"
@@ -116,6 +118,12 @@ export default function Navbar() {
         </nav>
 
         <div className="menu-panel__foot">
+          <a className="btn btn--ghost" href={`mailto:${socials.email}`}>
+            Email me
+            <span className="btn__icon">
+              <Icon name="arrow-up-right" width={14} height={14} />
+            </span>
+          </a>
           <a className="btn btn--ghost" href={socials.github}>
             GitHub
             <span className="btn__icon">

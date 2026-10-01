@@ -6,13 +6,13 @@ import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import ScrollProgress from './components/ScrollProgress'
 import Skills from './components/Skills'
-import TechMarquee from './components/TechMarquee'
 import Work from './components/Work'
 import useParallax from './hooks/useParallax'
 
 /**
- * Single-page portfolio: hero, work, about, skills and contact are all
- * sections of one document — no routing, no page reloads.
+ * Single-page portfolio: masthead, work, about, skills and contact are all
+ * sections of one document — no routing, no page reloads. The order puts the
+ * work directly under the masthead: a portfolio is read for the projects first.
  */
 export default function App() {
   // Backdrop layers sit in fixed elements, so they drift with the page offset.
@@ -40,7 +40,6 @@ export default function App() {
       <div className="app">
         <main id="main">
           <Hero />
-          <TechMarquee />
           <Work />
           <About />
           <Skills />

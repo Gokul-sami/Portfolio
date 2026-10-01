@@ -9,6 +9,9 @@ dist-ssr/
 # Vite cache
 .vite/
 
+# Browser-session artifacts (playwright-cli)
+.playwright-cli/
+
 # Logs
 logs/
 *.log
